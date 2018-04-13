@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>Welcome to mysite index..</h1>
+    <a href="http://www.cnblogs.com/zingp/">博客连接</a>
+    <p>我是{{ name | upper }}</p>
+
+    <p>喜欢的水果有：</p>
+    {% for item in fruits %}
+        <p>水果{{ forloop.counter }}： {{ item }}</p>
+    {% endfor %}
+
+    {% if "age" not in user %}
+        <p>没有年龄</p>
+    {% else %}
+        <p> 年龄 {{ user.age }}</p>
+    {% endif %}
+
+    <p> 第二个水果 {{ fruits.1 }}</p>
+
+    {% for k, v in user.items %}
+        <p>{{ k }}： {{ v }}</p>
+    {% endfor %}
+
+</body>
+</html>
